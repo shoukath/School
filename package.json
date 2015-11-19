@@ -1,0 +1,19 @@
+{
+  "name": "school",
+  "version": "0.0.1",
+  "description": "A Montessori School Management Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shoukath/School.git"
+  },
+  "author": "Shoukath",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shoukath/School/issues"
+  },
+  "homepage": "https://github.com/shoukath/School#readme"
+}
