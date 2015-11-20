@@ -22,6 +22,7 @@
 			<div class="form-group">
 				<input type="password" class="form-control" placeholder="Password" ng-model="password">
 			</div>
+			<div ng-repeat="user in users">{{user.username}}</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
 	</section>

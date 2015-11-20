@@ -7,7 +7,8 @@ loginApp.controller("loginCtrl", function($scope, $http) {
 	$scope.submit = function() {
 		console.log('Submit');
 		$http.get('/user').success(function(response) {
-			console.log('working');
+			//console.log(response);
+			$scope.users = response;
 		})
 	};
 });
