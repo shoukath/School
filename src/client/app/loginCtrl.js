@@ -1,7 +1,9 @@
-var loginApp = angular.module("loginApp", []);
+'use strict'
+
+var loginApp = angular.module('loginApp', []);
 
 /*Login Application*/
-loginApp.controller("loginCtrl", function($scope, $http) {
+loginApp.controller('loginCtrl', function($scope, $http) {
 	// $scope.name = 'shoukath@gmail.com';
 	// $scope.password = 'test';
 	$scope.submit = function() {
@@ -9,7 +11,7 @@ loginApp.controller("loginCtrl", function($scope, $http) {
 		$http.get('/user').success(function(response) {
 			//console.log(response);
 			$scope.users = response;
-		})
+		});
 	};
 });
 
