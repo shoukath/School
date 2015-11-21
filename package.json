@@ -10,6 +10,8 @@
   },
   "devDependencies": {
     "angular": "^1.4.8",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
     "mongojs": "^1.4.1"
   }
 }
