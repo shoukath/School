@@ -22,6 +22,7 @@ $ node app.js
 * [AngularJS] - HTML enhanced for web apps!
 * [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework
+* [Gulp] - the streaming build system
 * [Twitter Bootstrap] - great UI boilerplate for modern web apps
 
 ### MongoLab Credentials
