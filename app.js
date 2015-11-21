@@ -1,22 +1,27 @@
 var express = require('express');
 var app = express();
-var mongojs = require('mongojs');
-var db = mongojs('schools', ['users']);
+var MongoClient = require('mongodb').MongoClient
 
-/*app.get('/', function(req, res) {
-  res.send('Hello World');
-});*/
-app.use(express.static(__dirname + "/src/client"));
+var dbUrl = 'mongodb://shoukath:shoukath@ds057234.mongolab.com:57234/schools';
+MongoClient.connect(dbUrl, function(err, db) {
+ 	console.log("Connected correctly to server");
 
-app.get('/user', function(req, res) {
-	var userList = {
-		username: "shoukath1@gmail.com",
-		password: "test"
-	};
-	db.users.find(function(err, docs) {
-		console.log(docs);
-		res.json(docs);
-	})
+ 	var collection = db.collection('users');
+ 
+	app.use(express.static(__dirname + "/dist"));
+
+	app.get('/user', function(req, res) {
+		var userList = {
+			username: "shoukath1@gmail.com",
+			password: "test"
+		};
+		collection.find({}).toArray(function(err, docs) {
+		    console.log("Found the following records");
+		    console.dir(docs);
+		    res.json(docs);
+		});
+	});
+	// db.close();
 });
 
 app.listen(3000);

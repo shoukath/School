@@ -7,6 +7,12 @@ Run the command below to install the packages
 $ npm install
 ```
 
+### Running the task-runner
+Running the `gulp` task-runner to compile the artifacts
+```sh
+$ gulp
+```
+
 ### Starting the application
 ```sh
 $ node app.js
@@ -17,8 +23,10 @@ $ node app.js
 * [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework
 * [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [MongoJS] - A [node.js] module for mongodb, that emulates the [official mongodb API] as much as possible.
 
+### MongoLab Credentials
+* URL: [MongoLab]
+shoukath/shoukath1
 
 
    [node.js]: <http://nodejs.org>
@@ -26,6 +34,5 @@ $ node app.js
    [jQuery]: <http://jquery.com>
    [express]: <http://expressjs.com>
    [AngularJS]: <http://angularjs.org>
-   [MongoJS]: <https://github.com/mafintosh/mongojs>
    [Gulp]: <http://gulpjs.com>
-   [official mongodb API]: <https://docs.mongodb.org/manual/>
+   [MongoLab]: <https://mongolab.com/home>
