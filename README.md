@@ -18,6 +18,12 @@ $ gulp
 $ node app.js
 ```
 
+### NPM Build and Run
+Alternatively, the command below could be run to completely build and run the application
+```
+npm run build
+```
+
 ### Tech
 * [AngularJS] - HTML enhanced for web apps!
 * [node.js] - evented I/O for the backend
@@ -28,7 +34,6 @@ $ node app.js
 ### MongoLab Credentials
 * URL: [MongoLab]
 shoukath/shoukath1
-
 
    [node.js]: <http://nodejs.org>
    [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
