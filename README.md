@@ -19,9 +19,9 @@ $ node app.js
 ```
 
 ### NPM Build and Run
-Alternatively, the command below could be run to completely build and run the application
+Alternatively, the command below could be run to completely build and run the application. This effectively combines all the above scripts
 ```
-npm run build
+npm start
 ```
 
 ### Tech
