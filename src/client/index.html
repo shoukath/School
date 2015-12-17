@@ -6,25 +6,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
 </head>
 <body ng-app="loginApp">
 	<header>
-		Manager App
+		<div class="container">
+			Manager App
+		</div>
 	</header>
 	<section ng-controller="loginCtrl">
-		<form ng-submit="submit()">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Username or Email" ng-model="name">
-			</div>
-			<div class="form-group">
-				<input type="password" class="form-control" placeholder="Password" ng-model="password">
-			</div>
-			<div ng-repeat="user in users">{{user.username}}</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
+		<div class="container">
+			<form ng-submit="submit()">
+				<p class="bg-danger">Invalid Username/Password</p>
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Username or Email" ng-model="name">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" placeholder="Password" ng-model="password">
+				</div>
+				<!-- <div ng-repeat="user in users">{{user.username}}</div> -->
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
 	</section>
 
 	<!--build:js build/js/main.min.js -->

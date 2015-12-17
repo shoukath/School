@@ -20,7 +20,10 @@ loginApp.controller('loginCtrl', function($scope, $http) {
 			}
 		}).success(function(data, status, headers, config) {
 			$scope.users = data;
-			console.log(data);
+			if (data.length) {
+				console.log(data);
+				location.href='./main.html';
+			}
 		}).error(function(data, status, headers, config) {
 			$scope.status = status;
 		});
