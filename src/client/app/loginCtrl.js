@@ -23,6 +23,8 @@ loginApp.controller('loginCtrl', function($scope, $http) {
 			if (data.length) {
 				console.log(data);
 				location.href='./main.html';
+			} else {
+				$scope.error = true;
 			}
 		}).error(function(data, status, headers, config) {
 			$scope.status = status;

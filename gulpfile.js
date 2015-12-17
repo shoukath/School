@@ -32,7 +32,7 @@ gulp.task('useref', function() {
 });
 
 gulp.task('watch', function() {
-	watch('src/client/*.html', function() {
+	watch('src/client/**/*', function() {
 		gulp.run('useref');
 	});
 });
