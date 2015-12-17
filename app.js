@@ -1,28 +1,51 @@
 'use strict'
 
 var express = require('express');
-var app = express();
+var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
+var app = express();
 
 var dbUrl = 'mongodb://shoukath:shoukath@ds057234.mongolab.com:57234/schools';
+
+app.use(express.static(__dirname + '/dist'));
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 MongoClient.connect(dbUrl, function(err, db) {
- 	console.log('Connected correctly to server');
-
- 	var collection = db.collection('users');
- 
-	app.use(express.static(__dirname + '/dist'));
-
 	app.get('/user', function(req, res) {
-		collection.find({}).toArray(function(err, docs) {
-		    console.log('Found the following records');
-		    console.dir(docs);
-		    res.json(docs);
+		var collection = db.collection('users');
+		collection.find({
+			'username': 'shoukathkhan',
+			'password': 'test'
+		}).toArray(function(err, docs) {
+			console.log('Found the following records');
+			console.dir(docs);
+			res.json(docs);
+			// db.close();
 		});
 	});
-	// db.close();
+
+	app.post('/login', function(req, res) {
+		db.collection('users').find({
+			'username': req.body.username,
+			'password': req.body.password
+		}).toArray(function(err, docs) {
+			console.log('Found the following records');
+			console.dir(docs);
+			res.json(docs);
+			// db.close();
+		});
+	});
 });
 
 var port = process.env.PORT ? process.env.PORT : 3000;
 
-app.listen(port, process.env.IP);
+if (process.env.IP){
+	app.listen(port, process.env.IP);
+} else {
+	app.listen(port);
+}
+
 console.log('Listening to port ' + port);
+console.log('Connected correctly to server');
