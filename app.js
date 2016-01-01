@@ -41,11 +41,13 @@ MongoClient.connect(dbUrl, function(err, db) {
 
 var port = process.env.PORT ? process.env.PORT : 3000;
 
-if (process.env.IP){
-	app.listen(port, process.env.IP);
-} else {
-	app.listen(port);
-}
+var startupLog = function() {
+	console.log('Listening to port ' + port);
+	console.log('Connected correctly to server');
+};
 
-console.log('Listening to port ' + port);
-console.log('Connected correctly to server');
+if (process.env.IP){
+	app.listen(port, process.env.IP, startupLog);
+} else {
+	app.listen(port, startupLog);
+}
